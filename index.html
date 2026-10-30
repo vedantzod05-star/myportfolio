@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tanmay Zod | Aspiring Cloud &amp; Cybersecurity Engineer</title>
+<meta name="description" content="Portfolio of Tanmay Zod, Computer Science student from Nagpur focused on cloud computing and cybersecurity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0710;--bg2:#120d1f;--card:#16102a;--line:#2a1f4a;--p:#7c4dff;--p2:#a78bfa;--t:#f3f0ff;--m:#a39bc2;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--t);font:400 16px/1.65 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.logo{font-family:Outfit,sans-serif;line-height:1.15}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+#bg{position:fixed;inset:0;z-index:-1;width:100%;height:100%}
+.wrap{width:min(1120px,92%);margin:auto}
+section{padding:90px 0}
+.title{text-align:center;margin-bottom:48px}
+.title h2{font-size:clamp(1.8rem,4vw,2.5rem);color:var(--p2)}
+.title p{color:var(--m);max-width:520px;margin:10px auto 0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:999px;font:600 15px Outfit,sans-serif;border:1.5px solid var(--p);transition:.25s;cursor:pointer;background:none;color:var(--t)}
+.btn.fill{background:linear-gradient(135deg,var(--p),#5b2de0);box-shadow:0 8px 28px #7c4dff55}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px #7c4dff66}
+:focus-visible{outline:2px solid var(--p2);outline-offset:3px}
+
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+header.s{background:#0a0710cc;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-size:1.5rem;font-weight:700}
+.logo span{color:var(--p2)}
+.links{display:flex;gap:30px;align-items:center}
+.links a{color:var(--m);font-size:15px;transition:.2s}
+.links a:hover,.links a.on{color:var(--t)}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
+.burger i{display:block;width:24px;height:2px;background:var(--t);margin:6px auto;transition:.3s}
+.burger.o i:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger.o i:nth-child(2){opacity:0}
+.burger.o i:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--p),var(--p2));z-index:60}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:110px 0 60px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.hi{color:var(--m);font-size:1.1rem}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);margin:8px 0 14px}
+.hero h1 b{background:linear-gradient(90deg,var(--p2),var(--p));-webkit-background-clip:text;background-clip:text;color:transparent}
+.type{font:600 clamp(1.1rem,2.6vw,1.5rem) Outfit,sans-serif;min-height:2em;color:var(--p2)}
+.type::after{content:"";display:inline-block;width:2px;height:1.1em;background:var(--p2);margin-left:4px;vertical-align:-3px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.hero p.d{color:var(--m);max-width:520px;margin:16px 0 28px}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+.soc{display:flex;gap:12px}
+.soc a{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.25s;background:var(--card)}
+.soc a:hover{background:var(--p);transform:translateY(-4px)}
+.soc svg{width:19px;height:19px;fill:currentColor}
+.photo{position:relative;justify-self:center;width:min(380px,85%);perspective:900px}
+.photo::before{content:"";position:absolute;inset:-6%;background:conic-gradient(from 0deg,var(--p),#3b1fa3,var(--p2),var(--p));border-radius:34px;filter:blur(38px);opacity:.55;animation:sp 9s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.frame{position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;transition:transform .15s;transform-style:preserve-3d;background:var(--card)}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.chip{position:absolute;background:#16102aee;border:1px solid var(--line);backdrop-filter:blur(8px);padding:9px 16px;border-radius:14px;font:500 13px Outfit,sans-serif;animation:fl 4s ease-in-out infinite}
+.chip.a{left:-18px;bottom:16%}
+.chip.b{right:-14px;top:12%;animation-delay:-2s}
+@keyframes fl{50%{transform:translateY(-10px)}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-10px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 16px;text-align:center}
+.stat strong{display:block;font:700 2.4rem Outfit,sans-serif;color:var(--p2)}
+.stat span{color:var(--m);font-size:14px}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.about p{color:var(--m);margin-bottom:14px}
+.info{display:grid;gap:12px}
+.info div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.info span{color:var(--m)}
+
+/* services */
+.svc{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:60px 1fr 2fr 40px;gap:20px;align-items:center;padding:26px 24px;border-bottom:1px solid var(--line);cursor:pointer;transition:.35s;border-radius:12px}
+.row h3{font-size:1.3rem}
+.row p{color:var(--m);font-size:15px}
+.row .n{font:600 1rem Outfit;color:var(--p2)}
+.row .ar{font-size:1.4rem;transition:.3s}
+.row:hover,.row.act{background:linear-gradient(90deg,#6c3df0,#4a2bb0);border-color:transparent}
+.row:hover p,.row.act p,.row:hover .n,.row.act .n{color:#fff}
+.row:hover .ar{transform:rotate(-45deg)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.sk{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:.3s}
+.sk:hover{transform:translateY(-6px);border-color:var(--p)}
+.sk .h{display:flex;justify-content:space-between;margin-bottom:12px;font:500 1rem Outfit}
+.sk .h em{font-style:normal;color:var(--p2)}
+.bar{height:8px;border-radius:9px;background:#241a42;overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--p),var(--p2));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.soft{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:36px}
+.soft span{padding:10px 20px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--m);transition:.25s}
+.soft span:hover{border-color:var(--p);color:var(--t);transform:translateY(-3px)}
+
+/* timeline */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.two h3{font-size:1.6rem;margin-bottom:22px;color:var(--p2)}
+.tl{position:relative;padding-left:26px;border-left:2px solid var(--line);display:grid;gap:16px}
+.it{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:.3s}
+.it::before{content:"";position:absolute;left:-35px;top:24px;width:14px;height:14px;border-radius:50%;background:var(--p);box-shadow:0 0 0 5px #7c4dff33}
+.it:hover{transform:translateX(6px);border-color:var(--p)}
+.it small{color:var(--p2);font-weight:500}
+.it h4{font:600 1.1rem Outfit;margin:4px 0}
+.it p{color:var(--m);font-size:14.5px}
+
+/* goals */
+.goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.g{background:linear-gradient(160deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:var(--r);padding:30px;transition:.3s}
+.g:hover{transform:translateY(-8px);border-color:var(--p);box-shadow:0 18px 40px #7c4dff2a}
+.g .ic{font-size:2rem;margin-bottom:14px}
+.g h3{margin-bottom:8px}
+.g p{color:var(--m);font-size:15px}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:34px;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:40px}
+.contact h2{font-size:2rem;margin-bottom:12px}
+.contact>div>p{color:var(--m);margin-bottom:24px}
+.ci{display:flex;gap:14px;align-items:center;margin-bottom:16px}
+.ci b{width:46px;height:46px;border-radius:12px;background:#241a42;display:grid;place-items:center;font-size:1.2rem;flex:none}
+.ci small{color:var(--m);display:block;line-height:1.3}
+form{display:grid;gap:14px}
+input,textarea{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--t);font:inherit;transition:.2s}
+input:focus,textarea:focus{outline:none;border-color:var(--p);box-shadow:0 0 0 3px #7c4dff33}
+textarea{min-height:120px;resize:vertical}
+footer{text-align:center;padding:34px 0;color:var(--m);border-top:1px solid var(--line);font-size:14px}
+#top{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;background:var(--p);border:0;color:#fff;font-size:1.2rem;cursor:pointer;opacity:0;pointer-events:none;transition:.3s;z-index:40}
+#top.v{opacity:1;pointer-events:auto}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+
+/* responsive */
+@media(max-width:900px){
+ .hero .wrap,.about,.two,.contact{grid-template-columns:1fr}
+ .hero{text-align:center}
+ .hero p.d{margin-inline:auto}
+ .cta,.soc{justify-content:center}
+ .photo{order:-1;width:min(300px,78%)}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .row{grid-template-columns:44px 1fr 30px}
+ .row p{grid-column:2/3;grid-row:2}
+ .contact{padding:26px}
+ .burger{display:block}
+ .links{position:fixed;top:72px;left:0;right:0;flex-direction:column;background:#0a0710f5;backdrop-filter:blur(16px);padding:26px;gap:22px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.35s}
+ .links.o{transform:none}
+ .chip.a{left:-6px}.chip.b{right:-6px}
+}
+@media(max-width:480px){section{padding:64px 0}.stat strong{font-size:2rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+.frame[data-missing]::after{content:attr(data-missing);position:absolute;inset:0;display:grid;place-items:center;font:700 5rem Outfit,sans-serif;color:var(--p2)}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<header id="hd">
+ <nav class="wrap">
+  <a href="#home" class="logo">Tanmay<span>.</span></a>
+  <button class="burger" id="bg-btn" aria-label="Menu"><i></i><i></i><i></i></button>
+  <div class="links" id="links">
+   <a href="#home" class="on">Home</a><a href="#about">About</a><a href="#focus">Focus</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#contact" class="btn fill" style="padding:9px 22px;color:#fff">Hire me</a>
+  </div>
+ </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="wrap">
+  <div>
+   <p class="hi">Hi, I’m</p>
+   <h1>Tanmay Zod,<br><b>Future Cloud Engineer</b></h1>
+   <div class="type" id="type" aria-live="off"></div>
+   <p class="d">Computer Science student from Nagpur. I’m building a strong foundation in web development and programming, with the goal of creating secure, reliable and scalable systems.</p>
+   <div class="cta">
+    <a href="#contact" class="btn fill">Let’s talk</a>
+    <a href="#journey" class="btn">See my journey</a>
+   </div>
+   <div class="soc">
+    <a href="mailto:vedantzod05@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 8L4.5 7.5v1.2L12 14l7.5-5.3V7.5L12 13Z"/></svg></a>
+    <a href="tel:+917350246397" aria-label="Phone"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.55 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.2 2.4.55 3.5a1 1 0 0 1-.25 1Z"/></svg></a>
+    <a href="#contact" aria-label="Location"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg></a>
+   </div>
+  </div>
+  <div class="photo" id="photo">
+   <div class="frame" id="frame"><img src="./img/profile.jpg" alt="Portrait of Tanmay Zod" fetchpriority="high" onerror="this.style.display='none';this.parentNode.setAttribute('data-missing','TZ')"></div>
+   <div class="chip a">☁️ Cloud Computing</div>
+   <div class="chip b">🔐 Cybersecurity</div>
+  </div>
+ </div>
+</section>
+
+<div class="wrap stats rv">
+ <div class="stat"><strong data-n="3" data-s=" mo">0</strong><span>Frontend internship</span></div>
+ <div class="stat"><strong data-n="2025">0</strong><span>Diploma in CS completed</span></div>
+ <div class="stat"><strong data-n="2" data-s="nd yr">0</strong><span>B.Tech CSE, ongoing</span></div>
+ <div class="stat"><strong data-n="5" data-s="+">0</strong><span>Core skill areas</span></div>
+</div>
+
+<section id="about">
+ <div class="wrap about">
+  <div class="rv">
+   <div class="title" style="text-align:left;margin-bottom:22px"><h2>About me</h2></div>
+   <p>I’m a Computer Science student who started with a diploma and moved straight into the second year of a B.Tech. I enjoy turning ideas into clean, working web pages and understanding how systems run behind them.</p>
+   <p>My goal is to work in cloud computing or cybersecurity, where I can use my technical knowledge to build secure, reliable and scalable systems. I communicate clearly with clients, plan my work well and stay calm under pressure.</p>
+   <a href="mailto:vedantzod05@gmail.com" class="btn fill" style="margin-top:10px">Email me</a>
+  </div>
+  <div class="info rv">
+   <div><span>Name</span><b>Tanmay Zod</b></div>
+   <div><span>Location</span><b>Nagpur, Maharashtra</b></div>
+   <div><span>Studying</span><b>B.Tech CSE (2nd year)</b></div>
+   <div><span>Email</span><b>vedantzod05@gmail.com</b></div>
+   <div><span>Phone</span><b>+91 73502 46397</b></div>
+  </div>
+ </div>
+</section>
+
+<section id="focus">
+ <div class="wrap">
+  <div class="title rv"><h2>What I’m working toward</h2><p>The areas I practise today and the ones I’m aiming for.</p></div>
+  <div class="svc rv" id="svc">
+   <div class="row act"><span class="n">01</span><h3>Front-End Development</h3><p>Building responsive pages with HTML and CSS, with a focus on clean layout and usability.</p><span class="ar">↗</span></div>
+   <div class="row"><span class="n">02</span><h3>Cloud Computing</h3><p>Learning how scalable, reliable systems are designed, deployed and kept running.</p><span class="ar">↗</span></div>
+   <div class="row"><span class="n">03</span><h3>Cybersecurity</h3><p>Studying how to protect applications and data so systems stay trustworthy.</p><span class="ar">↗</span></div>
+   <div class="row"><span class="n">04</span><h3>Programming Fundamentals</h3><p>Strengthening data structures and problem solving as the base for everything else.</p><span class="ar">↗</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="wrap">
+  <div class="title rv"><h2>My skills</h2><p>Honest levels, growing every semester.</p></div>
+  <div class="skills rv">
+   <div class="sk"><div class="h">HTML &amp; CSS<em>Basic</em></div><div class="bar"><i data-w="65"></i></div></div>
+   <div class="sk"><div class="h">Front-End Development<em>Beginner</em></div><div class="bar"><i data-w="50"></i></div></div>
+   <div class="sk"><div class="h">Data Structures<em>Fundamentals</em></div><div class="bar"><i data-w="45"></i></div></div>
+   <div class="sk"><div class="h">Programming<em>Fundamentals</em></div><div class="bar"><i data-w="55"></i></div></div>
+   <div class="sk"><div class="h">Computer Applications<em>Good</em></div><div class="bar"><i data-w="70"></i></div></div>
+  </div>
+  <div class="soft rv"><span>Planning &amp; Organization</span><span>Excellent Communication</span><span>Client Communication</span><span>Calm Under Pressure</span><span>User Research</span></div>
+ </div>
+</section>
+
+<section id="journey">
+ <div class="wrap two">
+  <div class="rv">
+   <h3>Experience</h3>
+   <div class="tl">
+    <div class="it"><small>2024 · 3 months</small><h4>Frontend Development Intern</h4><p>Wide Softech Pvt. Ltd. Learned and practised HTML and CSS, and worked on frontend design basics.</p></div>
+   </div>
+  </div>
+  <div class="rv">
+   <h3>Education</h3>
+   <div class="tl">
+    <div class="it"><small>Currently pursuing</small><h4>B.Tech, Computer Science Engineering</h4><p>Govindrao Wanjari College of Engineering &amp; Technology. Direct second year.</p></div>
+    <div class="it"><small>Completed June 2025</small><h4>Diploma in Computer Science</h4><p>JD College of Engineering and Management, Nagpur.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="title rv"><h2>My career objective</h2><p>Where I want my skills to take me.</p></div>
+  <div class="goals rv">
+   <div class="g"><div class="ic">☁️</div><h3>Scalable</h3><p>Systems that grow smoothly as more people use them.</p></div>
+   <div class="g"><div class="ic">🛡️</div><h3>Secure</h3><p>Applications and data protected by design, not as an afterthought.</p></div>
+   <div class="g"><div class="ic">⚙️</div><h3>Reliable</h3><p>Services that stay available and behave predictably.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap">
+  <div class="contact rv">
+   <div>
+    <h2>Let’s work together</h2>
+    <p>Looking for an internship or entry-level role in cloud or cybersecurity? Send me a message.</p>
+    <div class="ci"><b>✉️</b><div><small>Email</small><a href="mailto:vedantzod05@gmail.com">vedantzod05@gmail.com</a></div></div>
+    <div class="ci"><b>📞</b><div><small>Phone</small><a href="tel:+917350246397">+91 73502 46397</a></div></div>
+    <div class="ci"><b>📍</b><div><small>Address</small>Pannaselayout, Swavalambi Nagar, Nagpur – 440022</div></div>
+   </div>
+   <form id="f">
+    <input id="n" placeholder="Your name" required aria-label="Your name">
+    <input id="e" type="email" placeholder="Your email" required aria-label="Your email">
+    <textarea id="m" placeholder="Your message" required aria-label="Your message"></textarea>
+    <button class="btn fill" type="submit" style="justify-content:center">Send message</button>
+   </form>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>© <span id="y"></span> Tanmay Zod. All rights reserved.</footer>
+<button id="top" aria-label="Back to top">↑</button>
+
+<script>
+(function(){
+ var $=function(s){return document.querySelector(s)},$$=function(s){return[].slice.call(document.querySelectorAll(s))};
+ $('#y').textContent=new Date().getFullYear();
+
+ // nav
+ var hd=$('#hd'),lk=$('#links'),bt=$('#bg-btn'),top=$('#top'),pr=$('#prog');
+ bt.onclick=function(){bt.classList.toggle('o');lk.classList.toggle('o')};
+ $$('#links a').forEach(function(a){a.onclick=function(){bt.classList.remove('o');lk.classList.remove('o')}});
+ var secs=$$('main section[id]');
+ function sc(){
+  var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  hd.classList.toggle('s',y>30);top.classList.toggle('v',y>500);pr.style.width=(y/h*100)+'%';
+  var cur='home';secs.forEach(function(s){if(y+120>=s.offsetTop)cur=s.id});
+  $$('#links a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur)});
+ }
+ addEventListener('scroll',sc,{passive:true});sc();
+ top.onclick=function(){scrollTo({top:0,behavior:'smooth'})};
+
+ // typing
+ var words=['Computer Science Student','Front-End Learner','Cloud & Security Enthusiast'],wi=0,ci=0,del=false,t=$('#type');
+ (function tick(){
+  var w=words[wi];t.textContent=w.slice(0,ci);
+  if(!del&&ci===w.length){del=true;return setTimeout(tick,1400)}
+  if(del&&ci===0){del=false;wi=(wi+1)%words.length}
+  ci+=del?-1:1;setTimeout(tick,del?40:85);
+ })();
+
+ // reveal + counters + bars
+ function count(el){
+  var n=+el.dataset.n,s=el.dataset.s||'',st=performance.now(),d=1400;
+  (function f(now){var p=Math.min((now-st)/d,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(n*e)+(p===1?s:'');if(p<1)requestAnimationFrame(f)})(st);
+ }
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(!e.isIntersecting)return;var el=e.target;el.classList.add('in');
+  el.querySelectorAll('[data-n]').forEach(count);
+  el.querySelectorAll('[data-w]').forEach(function(b){b.style.width=b.dataset.w+'%'});
+  io.unobserve(el);
+ })},{threshold:.18});
+ $$('.rv').forEach(function(e){io.observe(e)});
+
+ // services accordion highlight
+ $$('#svc .row').forEach(function(r){r.onclick=function(){$$('#svc .row').forEach(function(x){x.classList.remove('act')});r.classList.add('act')}});
+
+ // photo tilt (desktop pointer only)
+ var fr=$('#frame'),ph=$('#photo');
+ if(matchMedia('(hover:hover)').matches){
+  ph.addEventListener('mousemove',function(e){var r=ph.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;fr.style.transform='rotateY('+x*12+'deg) rotateX('+-y*12+'deg)'});
+  ph.addEventListener('mouseleave',function(){fr.style.transform=''});
+ }
+
+ // contact -> mail client
+ $('#f').onsubmit=function(e){
+  e.preventDefault();
+  var b='Name: '+$('#n').value+'\nEmail: '+$('#e').value+'\n\n'+$('#m').value;
+  location.href='mailto:vedantzod05@gmail.com?subject='+encodeURIComponent('Portfolio enquiry from '+$('#n').value)+'&body='+encodeURIComponent(b);
+ };
+
+ // particle background
+ var c=$('#bg'),x=c.getContext('2d'),P=[],W,H,mx=-999,my=-999;
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+ function rs(){W=c.width=innerWidth;H=c.height=innerHeight;P=[];var n=Math.min(70,Math.floor(W*H/22000));for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35})}
+ addEventListener('resize',rs);addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});rs();
+ (function dr(){
+  x.clearRect(0,0,W,H);
+  var g=x.createRadialGradient(W*.8,0,0,W*.8,0,W*.7);g.addColorStop(0,'rgba(124,77,255,.16)');g.addColorStop(1,'rgba(10,7,16,0)');x.fillStyle=g;x.fillRect(0,0,W,H);
+  for(var i=0;i<P.length;i++){var a=P[i];a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1;
+   x.fillStyle='rgba(167,139,250,.7)';x.beginPath();x.arc(a.x,a.y,1.6,0,6.3);x.fill();
+   for(var j=i+1;j<P.length;j++){var b=P[j],dx=a.x-b.x,dy=a.y-b.y,d=dx*dx+dy*dy;if(d<17000){x.strokeStyle='rgba(124,77,255,'+(.22-d/90000)+')';x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}
+   var mdx=a.x-mx,mdy=a.y-my;if(mdx*mdx+mdy*mdy<19000){x.strokeStyle='rgba(167,139,250,.35)';x.beginPath();x.moveTo(a.x,a.y);x.lineTo(mx,my);x.stroke()}
+  }
+  requestAnimationFrame(dr);
+ })();
+})();
+</script>
+</body>
+</html>
